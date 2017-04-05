@@ -21,8 +21,8 @@ This extension aims to put a context menu to chrome witch allow the user to add 
 - Pirate Bay link example : magnet:?xt=urn:btih:71dac39824e6dae52a77a6a127e3593f59a4a9e8&dn=The.100.S04E08.HDTV.x264-KILLERS%5Bettv%5D&tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969&tr=udp%3A%2F%2Fzer0day.ch%3A1337&tr=udp%3A%2F%2Fopen.demonii.com%3A1337&tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969&tr=udp%3A%2F%2Fexodus.desync.com%3A6969
 
 # Note
-The default url for transmission web RPC is '''http://hostIp:hostPort/transmission/rpc'''
-To get the method right you have to stringify a json var containing arguments, ie : 
+- The default url for transmission web RPC is http://hostIp:hostPort/transmission/rpc so you have to put the right url in the script.js
+- To get the method right you have to stringify a json var containing arguments, ie : 
 
 params = {
        "arguments": {

@@ -1,5 +1,5 @@
-Chrome Extension Torrent from pirateBay to Tranmission - by Darkhan, 2017-04
-============================================================================
+Chrome Extension Torrent from pirateBay to Tranmission - 2017-04
+================================================================
 
 This extension aims to put a context menu to chrome witch allow the user to add a torrent from the PirateBay directly into transmission via the tranmission-daemon RPC.
 

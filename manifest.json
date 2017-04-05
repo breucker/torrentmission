@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+
+  "name": "Transmission pirate bay",
+  "description": "Get pirate bay torrent link into Transmission",
+  "version": "1.0",
+  "permissions": [
+  "contextMenus",
+  "http://192.168.0.96:9091/"
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "jquery.js",
+      "script.js"
+    ]
+  }
+
+}

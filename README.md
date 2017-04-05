@@ -12,7 +12,7 @@ This extension aims to put a context menu to chrome witch allow the user to add 
 - Goto chrome://extensions
 - Check "Developer mode"
 - Click on load non-packaged extension
-- Put the url of the transmission-daemon server in script.js (in the var "urlTranmission")
+- Put the url of the transmission-daemon server in script.js (in the var "urlTranmission") and on the manifest.json file under "permissions"
 - Select this folder
 
 # Reference
@@ -25,6 +25,8 @@ This extension aims to put a context menu to chrome witch allow the user to add 
 - The default url for transmission web RPC is http://hostIp:hostPort/transmission/rpc so you have to put the right url in the script.js
 - To get the method right you have to stringify a json var containing arguments, ie : 
 
+```javascript
+
 params = {
        "arguments": {
            "fields": [
@@ -34,13 +36,16 @@ params = {
        }, 
        "method": "torrent-get"
     };
-and send JSON.stringify(params) as request body.
+
+```
+... and send JSON.stringify(params) as request body.
 
 # Todo
 
-- Problem with CORS (cross origin check inside chrome) prevents to send a post request from the javascript to the transmission server ! It's a ongooing bug : https://trac.transmissionbt.com/ticket/5463
+- ~~Problem with CORS (cross origin check inside chrome) prevents to send a post request from the javascript to the transmission server ! It's a ongooing bug : https://trac.transmissionbt.com/ticket/5463~~
 -> ok you just have to put the tranmission server address in the manifest under "permissions". 
 This brings another todo : 
-- set the url of the server in extension options.
+- Set the url of the server in extension options.
 - React directly to a click on a "magnet" link
-- Add notification on success or error
+- Add notification on success or error instead of alert
+- Only show the context menu if the link is a torrent

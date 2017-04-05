@@ -12,6 +12,7 @@ This extension aims to put a context menu to chrome witch allow the user to add 
 - Goto chrome://extensions
 - Check "Developer mode"
 - Click on load non-packaged extension
+- Put the url of the transmission-daemon server in script.js (in the var "urlTranmission")
 - Select this folder
 
 # Reference
@@ -41,5 +42,5 @@ and send JSON.stringify(params) as request body.
 -> ok you just have to put the tranmission server address in the manifest under "permissions". 
 This brings another todo : 
 - set the url of the server in extension options.
-- Check for the missing header "X-Transmission-Session-Id" error, and add it to next request headers
 - React directly to a click on a "magnet" link
+- Add notification on success or error

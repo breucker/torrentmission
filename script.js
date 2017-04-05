@@ -1,3 +1,5 @@
+//storing variable for the X-Transmission-Session-Id header
+var xSessionID = ""
 
 // The onClicked callback function.
 function onClickHandler(info, tab) {
@@ -23,7 +25,8 @@ function onClickHandler(info, tab) {
       "method": "torrent-add"
     };
     var headers = {
-      "X-Transmission-Session-Id": "hJjdAAJl7OQTOYPYOIfOIQ0ycfZO0w9S8czbI1kXNx07ETVv"
+      //"X-Transmission-Session-Id": "hJjdAAJl7OQTOYPYOIfOIQ0ycfZO0w9S8czbI1kXNx07ETVv"
+      "X-Transmission-Session-Id": xSessionID
     }
     $.ajax({
       url: urlTransmission,
@@ -31,8 +34,21 @@ function onClickHandler(info, tab) {
       data: JSON.stringify(params),
       headers: headers,
       success: function(data){
-        console.log("response : ", JSON.stringify(data));
+        console.log("[torrentmission] response : ", data);
+        alert("Torrent '"+data.arguments["torrent-added"].name+"' added successfuly ! \n");
+      },
+      error: function(request, textStatus, err){
+        console.error("[torrentmission] error when sending request :", err, textStatus);
+        if(request.getResponseHeader('X-Transmission-Session-Id'))
+        {
+          console.log("[torrentmission] error response session id :",request.getResponseHeader('X-Transmission-Session-Id') );
+          xSessionID = request.getResponseHeader('X-Transmission-Session-Id');
+          this.headers = {"X-Transmission-Session-Id": xSessionID};
+          console.log("[torrentmission] retrying with new tranmission session id...", xSessionID);
+          $.ajax(this);
+        }
       }
+
     });
 };
 

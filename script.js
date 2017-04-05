@@ -23,7 +23,7 @@ function onClickHandler(info, tab) {
       "method": "torrent-add"
     };
     var headers = {
-      "X-Transmission-Session-Id": "dxl5FFWt6l4VsfDy5ckCQieQ7w5sBdRO5hrlx5IjmOt4gzsJ"
+      "X-Transmission-Session-Id": "hJjdAAJl7OQTOYPYOIfOIQ0ycfZO0w9S8czbI1kXNx07ETVv"
     }
     $.ajax({
       url: urlTransmission,
@@ -41,5 +41,5 @@ chrome.contextMenus.onClicked.addListener(onClickHandler);
 // Set up context menu tree at install time.
 chrome.runtime.onInstalled.addListener(function() {
   // Create link on context menu
-  var id = chrome.contextMenus.create({"title": title, "contexts":"link","id": "contextLink"});
+  var id = chrome.contextMenus.create({"title": "Add torrent directly to tranmission...", "contexts":["link"],"id": "contextLink"});
 });

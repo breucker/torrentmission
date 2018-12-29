@@ -6,7 +6,7 @@ This extension aims to put a context menu to chrome witch allow the user to add 
 # Pre-Requisite
 
 - Client : Google chrome
-- Server : trasnmission-daemon (https://doc.ubuntu-fr.org/transmission)
+- Server : transmission-daemon (https://doc.ubuntu-fr.org/transmission)
 
 # Install
 - Goto chrome://extensions
